@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: careerpath-tn
+    runtime: node
+    plan: free
+    buildCommand: "cd server && npm install && cd ../client && npm install && npm run build"
+    startCommand: "node server/src/index.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true   # Render auto-generates a secure random value
+      - key: DB_PATH
+        value: /data
+    disk:
+      name: careerpath-db
+      mountPath: /data
+      sizeGB: 1

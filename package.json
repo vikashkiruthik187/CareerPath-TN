@@ -1,0 +1,20 @@
+{
+  "name": "careerpath-tn",
+  "version": "1.0.0",
+  "description": "Tamil Nadu Student Career Guidance and Life Skills Platform",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "node server/src/index.js",
+    "postinstall": "cd server && npm install",
+    "dev:server": "cd server && node src/index.js",
+    "dev:client": "cd client && npm run dev",
+    "seed": "cd server && node src/db/seed.js",
+    "install:all": "cd client && npm install && cd ../server && npm install"
+  },
+  "keywords": ["careerpath", "tamilnadu", "education", "student-guidance"],
+  "author": "CareerPath TN Team",
+  "license": "ISC"
+}
